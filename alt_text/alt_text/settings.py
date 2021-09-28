@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders',
-    #'webpack_loader',
     'api.apps.ApiConfig',
     'frontend.apps.FrontendConfig',
 ]
@@ -53,8 +51,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'alt_text.urls'
@@ -77,13 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'alt_text.wsgi.application'
 
-# Webpack Loader config
-# WEBPACK_LOADER = {
-#     'DEFAULT': {
-#         'BUNDLE_DIR_NAME': 'frontend/',
-#         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json')
-#     }
-# }
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -133,11 +122,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Disable CORS feature
-CORS_ORIGIN_ALLOW_ALL = True

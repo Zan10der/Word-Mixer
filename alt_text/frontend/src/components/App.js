@@ -1,7 +1,8 @@
-import React from "react";
-//import { render } from "react-dom";
+import React, { Component } from "react";
+import { render } from "react-dom";
 import HomePage from "./HomePage";
 
+/*
 const App = () => {
     return (
         <div>Please work!</div>
@@ -9,8 +10,9 @@ const App = () => {
 }
 
 export default App
+*/
 
-/*
+
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -23,4 +25,3 @@ export default class App extends Component {
 
 const appDiv = document.getElementById("app");
 render(<App />, appDiv);
-*/
