@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Scrabble
+from .serializers import ScrabbleSerializer
 
-# Create your views here.
+class ScrabbleViewSet(viewsets.ModelViewSet):
+    queryset = Scrabble.objects.all()
+    serializer_class = NoteSerializer
