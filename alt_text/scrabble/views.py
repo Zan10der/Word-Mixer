@@ -4,4 +4,4 @@ from .serializers import ScrabbleSerializer
 
 class ScrabbleViewSet(viewsets.ModelViewSet):
     queryset = Scrabble.objects.all()
-    serializer_class = NoteSerializer
+    serializer_class = ScrabbleSerializer
