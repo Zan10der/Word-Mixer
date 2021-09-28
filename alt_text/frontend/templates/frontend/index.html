@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-+ {% load render_bundle from webpack_loader %}
 <html>
     <head>
         <meta charset="UTF-8" />
@@ -21,6 +20,5 @@
         
 
         <script src="{% static "frontend/main.js" %}"></script>
-        + {% render_bundle 'frontend' %}
     </body>
 </html>

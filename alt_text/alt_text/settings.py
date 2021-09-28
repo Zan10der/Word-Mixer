@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'webpack_loader',
+    #'webpack_loader',
     'api.apps.ApiConfig',
     'frontend.apps.FrontendConfig',
 ]
@@ -78,12 +78,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'alt_text.wsgi.application'
 
 # Webpack Loader config
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'frontend/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json')
-    }
-}
+# WEBPACK_LOADER = {
+#     'DEFAULT': {
+#         'BUNDLE_DIR_NAME': 'frontend/',
+#         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json')
+#     }
+# }
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
