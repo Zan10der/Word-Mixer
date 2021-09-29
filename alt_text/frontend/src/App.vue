@@ -4,12 +4,23 @@
 </template>
 
 <script>
+import axios from 'axios'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data: () => ({
+    sentences: []
+  }),
+
   components: {
     HelloWorld
+  },
+
+  mounted () {
+    axios.get('http://localhost:8000/api/scrabble/').then((response) => {
+      this.sentences = response.data
+    })
   }
 }
 </script>
