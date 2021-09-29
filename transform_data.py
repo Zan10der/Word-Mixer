@@ -6,4 +6,4 @@ words.columns = ["Word"]
 words["First"] = words["Word"].str[0]
 words["Length"] = words["Word"].str.len()
 
-words.to_csv("Words.csv", index=True)
+words.to_csv("Words.csv", index=False)
