@@ -1,10 +1,10 @@
 from django.urls import include, path
-from rest_framework import routers
+#from rest_framework import routers
 from .views import ScrabbleViewSet
 
-router = routers.DefaultRouter()
-router.register(r'scrabble', ScrabbleViewSet)
+#router = routers.DefaultRouter()
+#router.register(r'scrabble', ScrabbleViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', ScrabbleViewSet, name="scrabble_view"),
 ]

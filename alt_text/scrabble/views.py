@@ -1,7 +1,19 @@
-from rest_framework import viewsets
+#from rest_framework import viewsets
+from django.shortcuts import render
+from django.http import JsonResponse
+import json
 from .models import Scrabble
-from .serializers import ScrabbleSerializer
+#from .serializers import ScrabbleSerializer
 
-class ScrabbleViewSet(viewsets.ModelViewSet):
-    queryset = Scrabble.objects.all()
-    serializer_class = ScrabbleSerializer
+def ScrabbleViewSet(request):
+    
+    if request.method == "POST":
+
+        data = json.loads(request.body)
+        sentence = data["sentence"]
+
+        print(sentence)
+
+        return JsonResponse({"msg": response}, status=201)
+    
+    return render(request, 'scrabble_view.html')
