@@ -47,8 +47,7 @@ export default {
 
             axios({
                 method: "POST",
-                url: "http://127.0.0.1:8000/api/scrabble/",
-                headers: {'X-CSRFTOKEN': '{{ csrf_token }}', 'Content-Type': 'application/json'},
+                url: "http://127.0.0.1:8000/api/",
                 data: {"sentence": this.output},
                 responseType: 'json'
             }).then( function (response){
