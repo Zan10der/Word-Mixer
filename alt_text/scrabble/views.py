@@ -1,25 +1,32 @@
-#from rest_framework import viewsets
-from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import Scrabble
-#from .serializers import ScrabbleSerializer
+import pandas as pd
 
 @csrf_exempt
 def main(request):
-    response = "Hello World"
+    words = LoadData()
+    print(request.data)
+    response = request.data
     return JsonResponse({'msg': response}, status=201)
 
-def ScrabbleViewSet(request):
-    
-    if request.method == "POST":
+def LoadData():
+    words = pd.read_csv("Words.csv")
+    return words
 
-        data = json.loads(request.body)
-        sentence = data["sentence"]
+def FindReplacements(word_list, words):
+    new_list = []
+    for word in word_list:
+        letters = len(word)
+        first = word[0]
+        temp = words[(words["First"] == first) & (words["Length"] == letters)]
 
-        print(sentence)
+        if temp.shape[0] == 0:
+            new_list.append(word)
+        else:  
+            temp = temp[temp["Word"] != word]
+            w_list = temp["Word"].tolist()
+            new_list.append(random.choice(w_list))
 
-        return JsonResponse({"msg": response}, status=201)
-    
-    return render(request, 'scrabble_view.html')
+    return new_list

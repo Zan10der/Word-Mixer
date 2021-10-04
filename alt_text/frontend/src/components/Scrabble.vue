@@ -18,7 +18,7 @@
             <div>
                  <span>Scrabbled sentence is:</span>
                  <br/>
-                 <span>{{ output }}</span>
+                 <span>{{ n_sentence }}</span>
             </div>
         </div>
     </div>
@@ -50,10 +50,8 @@ export default {
                 url: "http://127.0.0.1:8000/",
                 data: {"sentence": this.output},
                 responseType: 'json'
-            }).then( function (response){
-                console.log('Data returned = ' + response.data)
-                this.n_sentence = response.data
-            }).bind(this)
+            }).then( response => (this.n_sentence = response.data)
+            ).bind(this)
             .catch( function (error){
                 console.log('Axios ajax error ' + error);
             })
