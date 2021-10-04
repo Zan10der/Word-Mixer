@@ -36,7 +36,7 @@ export default {
 
     data: () => ({
         output: '',
-        n_sentence: 'Set',
+        n_sentence: '',
     }),
 
     methods: {
@@ -50,7 +50,7 @@ export default {
                 url: "http://127.0.0.1:8000/",
                 data: {"sentence": this.output},
                 responseType: 'json'
-            }).then( response => (this.n_sentence = response.data)
+            }).then( response => (this.n_sentence = response.data['msg'])
             ).bind(this)
             .catch( function (error){
                 console.log('Axios ajax error ' + error);
