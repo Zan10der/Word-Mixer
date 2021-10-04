@@ -36,7 +36,7 @@ export default {
 
     data: () => ({
         output: '',
-        n_sentence: '',
+        n_sentence: 'Set',
     }),
 
     methods: {
@@ -47,7 +47,7 @@ export default {
 
             axios({
                 method: "POST",
-                url: "http://127.0.0.1:8000/api/",
+                url: "http://127.0.0.1:8000/",
                 data: {"sentence": this.output},
                 responseType: 'json'
             }).then( function (response){

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-m4ml(tttdd96ekzidp-5*)afdfizn$rek!_prhry0+fw+$t*y=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'scrabble',
+    'scrabble.apps.ScrabbleConfig',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +58,7 @@ ROOT_URLCONF = 'alt_text.urls'
 
 # This should be changed once this is in production
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
     {

@@ -1,10 +1,16 @@
+# Import required libraries
 import pandas as pd
 import random
 
+''' User defined functions
+!!!!!!!!!!!!!!!!!!!!!! ''' 
+
+# Load words file
 def LoadData():
     words = pd.read_csv("Words.csv")
     return words
 
+# Find replacement words
 def FindReplacements(word_list, words):
     new_list = []
     for word in word_list:
