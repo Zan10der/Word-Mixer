@@ -30,7 +30,7 @@ def FindReplacements(word_list, words):
         first = word[0]
         temp = words[(words["First"] == first) & (words["Length"] == letters)]
 
-        if temp.shape[0] == 0:
+        if temp.shape[0] <= 1:
             new_list.append(word)
         else:  
             temp = temp[temp["Word"] != word]
